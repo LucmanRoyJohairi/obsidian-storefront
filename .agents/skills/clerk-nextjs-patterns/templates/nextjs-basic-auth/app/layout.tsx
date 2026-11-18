@@ -9,7 +9,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <header>
             <Suspense>
               <Show when="signed-out">
-                <SignInButton />
+                <SignInButton
+                  mode="modal"
+                  appearance={{
+                    elements: {
+                      modalBackdrop: "items-center justify-center pt-0",
+                    },
+                  }}
+                />
                 <SignUpButton />
               </Show>
               <Show when="signed-in">
