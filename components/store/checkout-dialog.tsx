@@ -15,7 +15,8 @@ import { Button } from "@/components/ui/button";
 
 // Uses NEXT_PUBLIC_STORE_TRON_WALLET from .env.local so it matches your backend
 const STORE_WALLET_ADDRESS =
-  process.env.NEXT_PUBLIC_STORE_TRON_WALLET
+  process.env.NEXT_PUBLIC_STORE_TRON_WALLET || "";
+
 
 export function CheckoutDialog({
   product,
