@@ -3,6 +3,7 @@
 import { SignInButton, UserButton, Show } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export function Navbar() {
   return (
@@ -17,11 +18,15 @@ export function Navbar() {
           </span>
         </div>
 
-        <nav className="flex items-center gap-3">
+        {/* Changed gap-3 to gap-6 (or use gap-8 for even more room) */}
+        <nav className="flex items-center gap-6">
           <Show when="signed-in">
-            <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-zinc-100">
+            <Link
+              href="/orders"
+              className="text-sm font-medium text-zinc-400 transition hover:text-zinc-100"
+            >
               My Orders
-            </Button>
+            </Link>
             <UserButton />
           </Show>
 
