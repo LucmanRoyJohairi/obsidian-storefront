@@ -1,3 +1,6 @@
+"use client";
+
+import { SignInButton, UserButton, Show } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 
@@ -15,16 +18,24 @@ export function Navbar() {
         </div>
 
         <nav className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-zinc-100">
-            My Orders
-          </Button>
-          <Button
-            size="sm"
-            variant="outline"
-            className="border-zinc-700 bg-zinc-900 text-zinc-100 hover:bg-zinc-800"
-          >
-            Sign In
-          </Button>
+          <Show when="signed-in">
+            <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-zinc-100">
+              My Orders
+            </Button>
+            <UserButton />
+          </Show>
+
+          <Show when="signed-out">
+            <SignInButton mode="modal">
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-zinc-700 bg-zinc-900 text-zinc-100 hover:bg-zinc-800"
+              >
+                Sign In
+              </Button>
+            </SignInButton>
+          </Show>
         </nav>
       </div>
     </header>
