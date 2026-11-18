@@ -117,7 +117,7 @@ export default function OrdersPage() {
 
           <Link
             href="/"
-            className="text-xs font-medium text-zinc-400 transition hover:text-zinc-100"
+            className="text-xs pt-10 font-medium text-zinc-400 transition hover:text-zinc-100"
           >
             &larr; Back to Storefront
           </Link>
