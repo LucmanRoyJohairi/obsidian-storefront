@@ -2,12 +2,12 @@
 
 A sleek, dark-mode digital storefront for curated wallpapers, Lightroom presets, audio kits, and UI design systems—powered by **Next.js**, **Clerk**, **Neon Serverless Postgres**, **Prisma 7**, and **on-chain USDT (TRC20) payment verification**.
 
-![Next.js](https://shields.io)
-![TypeScript](https://shields.io)
-![Tailwind CSS](https://shields.io)
-![Prisma](https://shields.io)
-![Neon](https://shields.io)
-![TRON](https://shields.io)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TypeScript](https://shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Prisma](https://shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![Neon](https://shields.io/badge/Neon-00E599?style=for-the-badge&logo=postgresql&logoColor=black)
+![TRON](https://shields.io/badge/TRON-FF060A?style=for-the-badge&logo=tron&logoColor=white)
 
 ---
 
