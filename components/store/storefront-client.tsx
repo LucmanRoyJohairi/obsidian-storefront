@@ -10,7 +10,13 @@ import { CheckoutDialog } from "@/components/store/checkout-dialog";
 
 const CATEGORIES = ["All", "Wallpapers", "Presets", "Audio", "UI Kits"];
 
-export function StorefrontClient({ products }: { products: Product[] }) {
+export function StorefrontClient({
+  products,
+  ownedProductIds = [],
+}: {
+  products: Product[];
+  ownedProductIds?: string[];
+}) {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
 
@@ -65,6 +71,7 @@ export function StorefrontClient({ products }: { products: Product[] }) {
             <ProductCard
               key={product.id}
               product={product}
+              isOwned={ownedProductIds.includes(product.id)}
               onSelect={setActiveProduct}
             />
           ))}

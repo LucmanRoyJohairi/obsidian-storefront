@@ -1,6 +1,6 @@
 import { Product } from "@/lib/products";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
@@ -8,14 +8,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Wallet } from "lucide-react";
+import { CheckCircle2, Wallet } from "lucide-react";
+import Link from "next/link";
+import { cn } from "cn";
 
 interface ProductCardProps {
   product: Product;
   onSelect: (product: Product) => void;
+  isOwned: Boolean
 }
 
-export function ProductCard({ product, onSelect }: ProductCardProps) {
+export function ProductCard({ product, onSelect, isOwned }: ProductCardProps) {
   return (
     <Card className="flex flex-col justify-between border-zinc-800 bg-zinc-900/40 transition-colors hover:border-zinc-700">
       <CardHeader>
@@ -42,13 +45,24 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
           </span>
           <span className="ml-1.5 text-xs text-zinc-500">TRC20</span>
         </div>
-        <Button
+       {isOwned ? 
+        ( <Link
+            href="/orders"
+            className={cn(
+              buttonVariants({ size: "sm", variant: "outline" }),
+              "border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 hover:text-emerald-300"
+            )}
+          >
+            <CheckCircle2 className="mr-1.5 h-3.5 w-3.5" />
+          Owned &bull; View Order
+        </Link> ): (<Button
           onClick={() => onSelect(product)}
           className="bg-emerald-500 font-medium text-zinc-950 hover:bg-emerald-400"
         >
           <Wallet className="mr-2 h-4 w-4" />
           Buy Now
-        </Button>
+        </Button>)
+      }
       </CardFooter>
     </Card>
   );
